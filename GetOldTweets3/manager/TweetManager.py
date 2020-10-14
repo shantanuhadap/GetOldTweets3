@@ -340,7 +340,9 @@ class TweetManager:
             ('Referer', url),
             ('Connection', "keep-alive")
         ]
-
+    
+        url = 'https://twitter.com/search?f=tweet&q=shantanu%20lang%3Aen%20until%3A2020-02-01%20since%3A2020-01-01&src=typed_query'
+            
         if proxy:
             opener = urllib.request.build_opener(urllib.request.ProxyHandler({'http': proxy, 'https': proxy}), urllib.request.HTTPCookieProcessor(cookieJar))
         else:
