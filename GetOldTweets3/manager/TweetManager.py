@@ -341,8 +341,6 @@ class TweetManager:
             ('Connection', "keep-alive")
         ]
     
-        url = 'https://twitter.com/search?f=tweet&q=shantanu%20lang%3Aen%20until%3A2020-02-01%20since%3A2020-01-01&src=typed_query'
-            
         if proxy:
             opener = urllib.request.build_opener(urllib.request.ProxyHandler({'http': proxy, 'https': proxy}), urllib.request.HTTPCookieProcessor(cookieJar))
         else:
@@ -353,8 +351,9 @@ class TweetManager:
             print(url)
             print('\n'.join(h[0]+': '+h[1] for h in headers))
 
+        url1 = 'https://twitter.com/search?f=tweet&q=shantanu%20lang%3Aen%20until%3A2020-02-01%20since%3A2020-01-01&src=typed_query'
         try:
-            response = opener.open(url)
+            response = opener.open(url1)
             jsonResponse = response.read()
         except Exception as e:
             print("An error occured during an HTTP request:", str(e))
